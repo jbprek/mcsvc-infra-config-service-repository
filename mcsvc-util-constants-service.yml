@@ -1,0 +1,427 @@
+server:
+  port: 8082
+
+countries:
+  csv-list: |
+    Afghanistan;AF;AFG
+    Åland Islands;AX;ALA
+    Albania;AL;ALB
+    Algeria;DZ;DZA
+    American Samoa;AS;ASM
+    Andorra;AD;AND
+    Angola;AO;AGO
+    Anguilla;AI;AIA
+    Antarctica;AQ;ATA
+    Antigua and Barbuda;AG;ATG
+    Argentina;AR;ARG
+    Armenia;AM;ARM
+    Aruba;AW;ABW
+    Australia;AU;AUS
+    Austria;AT;AUT
+    Azerbaijan;AZ;AZE
+    Bahamas;BS;BHS
+    Bahrain;BH;BHR
+    Bangladesh;BD;BGD
+    Barbados;BB;BRB
+    Belarus;BY;BLR
+    Belgium;BE;BEL
+    Belize;BZ;BLZ
+    Benin;BJ;BEN
+    Bermuda;BM;BMU
+    Bhutan;BT;BTN
+    Bolivia (Plurinational State of);BO;BOL
+    Bonaire, Sint Eustatius and Saba;BQ;BES
+    Bosnia and Herzegovina;BA;BIH
+    Botswana;BW;BWA
+    Bouvet Island;BV;BVT
+    Brazil;BR;BRA
+    British Indian Ocean Territory;IO;IOT
+    Brunei Darussalam;BN;BRN
+    Bulgaria;BG;BGR
+    Burkina Faso;BF;BFA
+    Burundi;BI;BDI
+    Cabo Verde;CV;CPV
+    Cambodia;KH;KHM
+    Cameroon;CM;CMR
+    Canada;CA;CAN
+    Cayman Islands;KY;CYM
+    Central African Republic;CF;CAF
+    Chad;TD;TCD
+    Chile;CL;CHL
+    China;CN;CHN
+    Christmas Island;CX;CXR
+    Cocos (Keeling) Islands;CC;CCK
+    Colombia;CO;COL
+    Comoros;KM;COM
+    Congo;CG;COG
+    Congo, Democratic Republic of the;CD;COD
+    Cook Islands;CK;COK
+    Costa Rica;CR;CRI
+    Côte d'Ivoire;CI;CIV
+    Croatia;HR;HRV
+    Cuba;CU;CUB
+    Curaçao;CW;CUW
+    Cyprus;CY;CYP
+    Czechia;CZ;CZE
+    Denmark;DK;DNK
+    Djibouti;DJ;DJI
+    Dominica;DM;DMA
+    Dominican Republic;DO;DOM
+    Ecuador;EC;ECU
+    Egypt;EG;EGY
+    El Salvador;SV;SLV
+    Equatorial Guinea;GQ;GNQ
+    Eritrea;ER;ERI
+    Estonia;EE;EST
+    Eswatini;SZ;SWZ
+    Ethiopia;ET;ETH
+    Falkland Islands (Malvinas);FK;FLK
+    Faroe Islands;FO;FRO
+    Fiji;FJ;FJI
+    Finland;FI;FIN
+    France;FR;FRA
+    French Guiana;GF;GUF
+    French Polynesia;PF;PYF
+    French Southern Territories;TF;ATF
+    Gabon;GA;GAB
+    Gambia;GM;GMB
+    Georgia;GE;GEO
+    Germany;DE;DEU
+    Ghana;GH;GHA
+    Gibraltar;GI;GIB
+    Greece;GR;GRC
+    Greenland;GL;GRL
+    Grenada;GD;GRD
+    Guadeloupe;GP;GLP
+    Guam;GU;GUM
+    Guatemala;GT;GTM
+    Guernsey;GG;GGY
+    Guinea;GN;GIN
+    Guinea-Bissau;GW;GNB
+    Guyana;GY;GUY
+    Haiti;HT;HTI
+    Heard Island and McDonald Islands;HM;HMD
+    Holy See;VA;VAT
+    Honduras;HN;HND
+    Hong Kong;HK;HKG
+    Hungary;HU;HUN
+    Iceland;IS;ISL
+    India;IN;IND
+    Indonesia;ID;IDN
+    Iran (Islamic Republic of);IR;IRN
+    Iraq;IQ;IRQ
+    Ireland;IE;IRL
+    Isle of Man;IM;IMN
+    Israel;IL;ISR
+    Italy;IT;ITA
+    Jamaica;JM;JAM
+    Japan;JP;JPN
+    Jersey;JE;JEY
+    Jordan;JO;JOR
+    Kazakhstan;KZ;KAZ
+    Kenya;KE;KEN
+    Kiribati;KI;KIR
+    Korea (Democratic People's Republic of);KP;PRK
+    Korea Republic of;KR;KOR
+    Kuwait;KW;KWT
+    Kyrgyzstan;KG;KGZ
+    Lao People's Democratic Republic;LA;LAO
+    Latvia;LV;LVA
+    Lebanon;LB;LBN
+    Lesotho;LS;LSO
+    Liberia;LR;LBR
+    Libya;LY;LBY
+    Liechtenstein;LI;LIE
+    Lithuania;LT;LTU
+    Luxembourg;LU;LUX
+    Macao;MO;MAC
+    Madagascar;MG;MDG
+    Malawi;MW;MWI
+    Malaysia;MY;MYS
+    Maldives;MV;MDV
+    Mali;ML;MLI
+    Malta;MT;MLT
+    Marshall Islands;MH;MHL
+    Martinique;MQ;MTQ
+    Mauritania;MR;MRT
+    Mauritius;MU;MUS
+    Mayotte;YT;MYT
+    Mexico;MX;MEX
+    Micronesia (Federated States of);FM;FSM
+    Moldova, Republic of;MD;MDA
+    Monaco;MC;MCO
+    Mongolia;MN;MNG
+    Montenegro;ME;MNE
+    Montserrat;MS;MSR
+    Morocco;MA;MAR
+    Mozambique;MZ;MOZ
+    Myanmar;MM;MMR
+    Namibia;NA;NAM
+    Nauru;NR;NRU
+    Nepal;NP;NPL
+    Netherlands;NL;NLD
+    New Caledonia;NC;NCL
+    New Zealand;NZ;NZL
+    Nicaragua;NI;NIC
+    Niger;NE;NER
+    Nigeria;NG;NGA
+    Niue;NU;NIU
+    Norfolk Island;NF;NFK
+    North Macedonia;MK;MKD
+    Northern Mariana Islands;MP;MNP
+    Norway;NO;NOR
+    Oman;OM;OMN
+    Pakistan;PK;PAK
+    Palau;PW;PLW
+    Palestine, State of;PS;PSE
+    Panama;PA;PAN
+    Papua New Guinea;PG;PNG
+    Paraguay;PY;PRY
+    Peru;PE;PER
+    Philippines;PH;PHL
+    Pitcairn;PN;PCN
+    Poland;PL;POL
+    Portugal;PT;PRT
+    Puerto Rico;PR;PRI
+    Qatar;QA;QAT
+    Réunion;RE;REU
+    Romania;RO;ROU
+    Russian Federation;RU;RUS
+    Rwanda;RW;RWA
+    Saint Barthélemy;BL;BLM
+    Saint Helena, Ascension and Tristan da Cunha;SH;SHN
+    Saint Kitts and Nevis;KN;KNA
+    Saint Lucia;LC;LCA
+    Saint Martin (French part);MF;MAF
+    Saint Pierre and Miquelon;PM;SPM
+    Saint Vincent and the Grenadines;VC;VCT
+    Samoa;WS;WSM
+    San Marino;SM;SMR
+    Sao Tome and Principe;ST;STP
+    Saudi Arabia;SA;SAU
+    Senegal;SN;SEN
+    Serbia;RS;SRB
+    Seychelles;SC;SYC
+    Sierra Leone;SL;SLE
+    Singapore;SG;SGP
+    Sint Maarten (Dutch part);SX;SXM
+    Slovakia;SK;SVK
+    Slovenia;SI;SVN
+    Solomon Islands;SB;SLB
+    Somalia;SO;SOM
+    South Africa;ZA;ZAF
+    South Georgia and the South Sandwich Islands;GS;SGS
+    South Sudan;SS;SSD
+    Spain;ES;ESP
+    Sri Lanka;LK;LKA
+    Sudan;SD;SDN
+    Suriname;SR;SUR
+    Svalbard and Jan Mayen;SJ;SJM
+    Sweden;SE;SWE
+    Switzerland;CH;CHE
+    Syrian Arab Republic;SY;SYR
+    Taiwan, Province of China;TW;TWN
+    Tajikistan;TJ;TJK
+    Tanzania, United Republic of;TZ;TZA
+    Thailand;TH;THA
+    Timor-Leste;TL;TLS
+    Togo;TG;TGO
+    Tokelau;TK;TKL
+    Tonga;TO;TON
+    Trinidad and Tobago;TT;TTO
+    Tunisia;TN;TUN
+    Turkey;TR;TUR
+    Turkmenistan;TM;TKM
+    Turks and Caicos Islands;TC;TCA
+    Tuvalu;TV;TUV
+    Uganda;UG;UGA
+    Ukraine;UA;UKR
+    United Arab Emirates;AE;ARE
+    United Kingdom of Great Britain and Northern Ireland;GB;GBR
+    United States of America;US;USA
+    United States Minor Outlying Islands;UM;UMI
+    Uruguay;UY;URY
+    Uzbekistan;UZ;UZB
+    Vanuatu;VU;VUT
+    Venezuela (Bolivarian Republic of);VE;VEN
+    Viet Nam;VN;VNM
+    Virgin Islands (British);VG;VGB
+    Virgin Islands (U.S.);VI;VIR
+    Wallis and Futuna;WF;WLF
+    Western Sahara;EH;ESH
+    Yemen;YE;YEM
+    Zambia;ZM;ZMB
+    Zimbabwe;ZW;ZWE
+
+
+currencies:
+  csv-list: |
+    AED;United Arab Emirates Dirham
+    AFN;Afghan Afghani
+    ALL;Albanian Lek
+    AMD;Armenian Dram
+    ANG;Netherlands Antillean Guilder
+    AOA;Angolan Kwanza
+    ARS;Argentine Peso
+    AUD;Australian Dollar
+    AWG;Aruban Florin
+    AZN;Azerbaijani Manat
+    BAM;Bosnia-Herzegovina Convertible Mark
+    BBD;Barbadian Dollar
+    BDT;Bangladeshi Taka
+    BGN;Bulgarian Lev
+    BHD;Bahraini Dinar
+    BIF;Burundian Franc
+    BMD;Bermudan Dollar
+    BND;Brunei Dollar
+    BOB;Bolivian Boliviano
+    BRL;Brazilian Real
+    BSD;Bahamian Dollar
+    BTC;Bitcoin
+    BTN;Bhutanese Ngultrum
+    BWP;Botswanan Pula
+    BYN;New Belarusian Ruble
+    BYR;Belarusian Ruble
+    BZD;Belize Dollar
+    CAD;Canadian Dollar
+    CDF;Congolese Franc
+    CHF;Swiss Franc
+    CLF;Chilean Unit of Account (UF)
+    CLP;Chilean Peso
+    CNY;Chinese Yuan
+    COP;Colombian Peso
+    CRC;Costa Rican Colón
+    CUC;Cuban Convertible Peso
+    CUP;Cuban Peso
+    CVE;Cape Verdean Escudo
+    CZK;Czech Republic Koruna
+    DJF;Djiboutian Franc
+    DKK;Danish Krone
+    DOP;Dominican Peso
+    DZD;Algerian Dinar
+    EGP;Egyptian Pound
+    ERN;Eritrean Nakfa
+    ETB;Ethiopian Birr
+    EUR;Euro
+    FJD;Fijian Dollar
+    FKP;Falkland Islands Pound
+    GBP;British Pound Sterling
+    GEL;Georgian Lari
+    GGP;Guernsey Pound
+    GHS;Ghanaian Cedi
+    GIP;Gibraltar Pound
+    GMD;Gambian Dalasi
+    GNF;Guinean Franc
+    GTQ;Guatemalan Quetzal
+    GYD;Guyanaese Dollar
+    HKD;Hong Kong Dollar
+    HNL;Honduran Lempira
+    HRK;Croatian Kuna
+    HTG;Haitian Gourde
+    HUF;Hungarian Forint
+    IDR;Indonesian Rupiah
+    ILS;Israeli New Sheqel
+    IMP;Manx pound
+    INR;Indian Rupee
+    IQD;Iraqi Dinar
+    IRR;Iranian Rial
+    ISK;Icelandic Króna
+    JEP;Jersey Pound
+    JMD;Jamaican Dollar
+    JOD;Jordanian Dinar
+    JPY;Japanese Yen
+    KES;Kenyan Shilling
+    KGS;Kyrgystani Som
+    KHR;Cambodian Riel
+    KMF;Comorian Franc
+    KPW;North Korean Won
+    KRW;South Korean Won
+    KWD;Kuwaiti Dinar
+    KYD;Cayman Islands Dollar
+    KZT;Kazakhstani Tenge
+    LAK;Laotian Kip
+    LBP;Lebanese Pound
+    LKR;Sri Lankan Rupee
+    LRD;Liberian Dollar
+    LSL;Lesotho Loti
+    LTL;Lithuanian Litas
+    LVL;Latvian Lats
+    LYD;Libyan Dinar
+    MAD;Moroccan Dirham
+    MDL;Moldovan Leu
+    MGA;Malagasy Ariary
+    MKD;Macedonian Denar
+    MMK;Myanma Kyat
+    MNT;Mongolian Tugrik
+    MOP;Macanese Pataca
+    MRO;Mauritanian Ouguiya
+    MUR;Mauritian Rupee
+    MVR;Maldivian Rufiyaa
+    MWK;Malawian Kwacha
+    MXN;Mexican Peso
+    MYR;Malaysian Ringgit
+    MZN;Mozambican Metical
+    NAD;Namibian Dollar
+    NGN;Nigerian Naira
+    NIO;Nicaraguan Córdoba
+    NOK;Norwegian Krone
+    NPR;Nepalese Rupee
+    NZD;New Zealand Dollar
+    OMR;Omani Rial
+    PAB;Panamanian Balboa
+    PEN;Peruvian Nuevo Sol
+    PGK;Papua New Guinean Kina
+    PHP;Philippine Peso
+    PKR;Pakistani Rupee
+    PLN;Polish Zloty
+    PYG;Paraguayan Guarani
+    QAR;Qatari Rial
+    RON;Romanian Leu
+    RSD;Serbian Dinar
+    RUB;Russian Ruble
+    RWF;Rwandan Franc
+    SAR;Saudi Riyal
+    SBD;Solomon Islands Dollar
+    SCR;Seychellois Rupee
+    SDG;Sudanese Pound
+    SEK;Swedish Krona
+    SGD;Singapore Dollar
+    SHP;Saint Helena Pound
+    SLL;Sierra Leonean Leone
+    SOS;Somali Shilling
+    SRD;Surinamese Dollar
+    STD;São Tomé and Príncipe Dobra
+    SVC;Salvadoran Colón
+    SYP;Syrian Pound
+    SZL;Swazi Lilangeni
+    THB;Thai Baht
+    TJS;Tajikistani Somoni
+    TMT;Turkmenistani Manat
+    TND;Tunisian Dinar
+    TOP;Tongan Paʻanga
+    TRY;Turkish Lira
+    TTD;Trinidad and Tobago Dollar
+    TWD;New Taiwan Dollar
+    TZS;Tanzanian Shilling
+    UAH;Ukrainian Hryvnia
+    UGX;Ugandan Shilling
+    USD;United States Dollar
+    UYU;Uruguayan Peso
+    UZS;Uzbekistan Som
+    VEF;Venezuelan Bolívar Fuerte
+    VND;Vietnamese Dong
+    VUV;Vanuatu Vatu
+    WST;Samoan Tala
+    XAF;CFA Franc BEAC
+    XAG;Silver (troy ounce)
+    XAU;Gold (troy ounce)
+    XCD;East Caribbean Dollar
+    XDR;Special Drawing Rights
+    XOF;CFA Franc BCEAO
+    XPF;CFP Franc
+    YER;Yemeni Rial
+    ZAR;South African Rand
+    ZMK;Zambian Kwacha (pre-2013)
+    ZMW;Zambian Kwacha
+    ZWL;Zimbabwean Dollar
+
